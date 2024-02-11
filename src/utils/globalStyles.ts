@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
-import SuiteExtraBold from '../fonts/SUITE-ExtraBold.ttf';
-import SuiteRegular from '../fonts/SUITE-Regular.ttf';
-import SuiteLight from '../fonts/SUITE-Light.ttf';
+import SuiteExtraBold from '../assets/fonts/SUITE-ExtraBold.ttf';
+import SuiteRegular from '../assets/fonts/SUITE-Regular.ttf';
+import SuiteLight from '../assets/fonts/SUITE-Light.ttf';
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
