@@ -30,7 +30,7 @@
       "node": {
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       },
-      "typescript": {} // this loads <rootdir>/tsconfig.json to eslint
+      "typescript": { "project": "./tsconfig.json" } // this loads <rootdir>/tsconfig.json to eslint
     }
   }
 }
