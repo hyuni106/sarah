@@ -1,0 +1,36 @@
+{
+  // [env] 프로젝트 환경 설정, 브라우저 환경과 ES2021 문법 사용
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  // [parser] typescript를 parser로 사용하도록 함
+  "parser": "@typescript-eslint/parser",
+  // [plugins] 사용할 eslint 플러그인 설정
+  "plugins": ["@typescript-eslint", "prettier"],
+  // [extends] 프로젝트에 적용할 eslit 규칙셋
+  "extends": [
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    // typescript
+    "plugin:import/typescript"
+  ],
+  // [rules] 상세 규칙
+  "rules": {
+    "react/react-in-jsx-scope": "off" // React 17 이상에서는 필요 없음
+  },
+  "settings": {
+    "react": {
+      "version": "detect" // React 버전을 자동으로 감지
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      },
+      "typescript": {} // this loads <rootdir>/tsconfig.json to eslint
+    }
+  }
+}
