@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { BodyText, TitleText } from './common';
+import { BodyText, TitleText } from '../common';
 import { Colors } from 'styles';
 import { ReactComponent as Mobile } from 'assets/svgs/img_mobile.svg';
 
