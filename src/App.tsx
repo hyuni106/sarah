@@ -1,5 +1,7 @@
 import './App.css';
 import styled from 'styled-components';
+import GlobalStyle from 'utils/globalStyles';
+
 import Header from './components/Header';
 import Main from 'components/main';
 import AboutMe from 'components/about';
@@ -16,12 +18,15 @@ const Div = styled.div`
 
 function App() {
   return (
-    <Div className="App">
-      <Header />
-      <Main />
-      <AboutMe />
-      <Works />
-    </Div>
+    <>
+      <GlobalStyle />
+      <Div className="App">
+        <Header />
+        <Main />
+        <AboutMe />
+        <Works />
+      </Div>
+    </>
   );
 }
 

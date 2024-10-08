@@ -22,6 +22,18 @@ const GlobalStyle = createGlobalStyle`
     font-style: normal;
     src: url(${SuiteLight}) format('truetype');
   }
+
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+  
+  html, body, #root, .App {
+    width: 100%;
+    max-width: 100vw;
+  }
 `;
 
 export default GlobalStyle;
