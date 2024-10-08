@@ -1,7 +1,4 @@
-import TitleText from "./TitleText";
-import BodyText from "./BodyText";
+import TitleText from './TitleText';
+import BodyText from './BodyText';
 
-export {
-    TitleText,
-    BodyText
-}
+export { TitleText, BodyText };
