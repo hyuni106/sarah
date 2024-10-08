@@ -16,3 +16,8 @@ export const StyledMobile = styled(Mobile)`
   margin-left: 40px;
   width: 320px;
 `;
+
+export const ButtonContainer = styled.div`
+  flex-direction: row;
+  margin: 48px 0 0 0;
+`;
