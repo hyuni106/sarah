@@ -1,25 +1,20 @@
-import styled from 'styled-components';
+import Main from 'components/Main';
 import './App.css';
+import Header from './components/Header';
+import styled from 'styled-components';
 
-const SubTitle = styled.p`
-  font-size: 24px;
-  font-family: SuiteExtraBold;
-  line-height: 0.8;
-`;
-
-const Title = styled.p`
-  font-size: 48px;
-  font-family: SuiteExtraBold;
-  margin-top: 0;
-  line-height: 0.8;
+const Div = styled.div`
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 `;
 
 function App() {
   return (
-    <div className="App">
-      <SubTitle>Hi👋 I’m Sarah Park! And I am..</SubTitle>
-      <Title>App Frontend Developer🧑‍💻</Title>
-    </div>
+    <Div className="App">
+      <Header />
+      <Main />
+    </Div>
   );
 }
 
