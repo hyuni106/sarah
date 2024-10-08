@@ -1,16 +1,24 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
 
-import { Section } from './styles';
+import { Section, StyledSwiper } from './styles';
 import ProjectCard from './ProjectCard';
+import { TitleText } from 'components/common';
 
 const Works = () => {
   return (
     <Section>
-      MY WORKS 🧑‍💻
-      <Swiper
+      <TitleText size="32px" align="center">
+        MY WORKS 🧑‍💻
+      </TitleText>
+      <StyledSwiper
         spaceBetween={72}
-        slidesPerView={1.5}
+        slidesPerView={1.3}
         centeredSlides={true}
+        modules={[Pagination]}
+        pagination={{
+          clickable: true
+        }}
         onSlideChange={() => console.log('slide change')}
         onSwiper={swiper => console.log(swiper)}>
         <SwiperSlide>
@@ -25,7 +33,7 @@ const Works = () => {
         <SwiperSlide>
           <ProjectCard />
         </SwiperSlide>
-      </Swiper>
+      </StyledSwiper>
     </Section>
   );
 };

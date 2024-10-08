@@ -8,6 +8,7 @@ const Colors = {
   g4: '#B1B1BB',
   g5: '#E3E3E3',
   g6: '#F3F3F3',
+  g7: '#FAFAFA',
   red: '#EB5757',
   orange: '#F2994A',
   yellow: '#F2C94C',
