@@ -1,22 +1,6 @@
-import styled from 'styled-components';
-
-import { BodyText, TitleText } from '../common';
+import { BodyText, TitleText } from 'components/common';
 import { Colors } from 'styles';
-import { ReactComponent as Mobile } from 'assets/svgs/img_mobile.svg';
-
-const Section = styled.section`
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: ${Colors.white};
-  padding: 0 40px 0 40px;
-`;
-
-const StyledMobile = styled(Mobile)`
-  margin-left: 40px;
-  width: 320px;
-`;
+import { Section, StyledMobile } from './styles';
 
 const Main = () => {
   return (
