@@ -6,10 +6,11 @@ import Header from './components/Header';
 import Main from 'components/main';
 import AboutMe from 'components/about';
 import Works from 'components/works';
+import Experience from 'components/experience';
+import Skills from 'components/skills';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
-import Experience from 'components/experience';
 
 const Div = styled.div`
   margin: 0;
@@ -26,6 +27,7 @@ function App() {
         <Main />
         <AboutMe />
         <Works />
+        <Skills />
         <Experience />
       </Div>
     </>
