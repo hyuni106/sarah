@@ -20,7 +20,7 @@ const ExperienceItem = ({
           x2="2"
           y2="100%"
           stroke={Colors.g3}
-          strokeWidth="4"
+          strokeWidth="3"
           strokeLinecap="round"
           strokeDasharray="12"
         />
@@ -30,10 +30,10 @@ const ExperienceItem = ({
     <Dot />
 
     <ExperienceContent>
-      <TitleText size="20px">{position}</TitleText>
-      <BodyText size="16px" margin="10px 0 0 0">
-        {date}
-      </BodyText>
+      <BodyText size="20px">{date}</BodyText>
+      <TitleText size="20px" margin="10px 0 0 0">
+        {position}
+      </TitleText>
       <BodyText size="18px" margin="10px 0 0 0">
         {description}
       </BodyText>

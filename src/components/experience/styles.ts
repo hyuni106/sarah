@@ -7,7 +7,7 @@ export const Section = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: ${Colors.g6};
+  background: ${Colors.white};
   padding: 120px 40px 120px 40px;
 `;
 
@@ -17,6 +17,7 @@ export const ExperienceItemWrapper = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  margin-bottom: 32px;
 `;
 
 export const Line = styled.div`
