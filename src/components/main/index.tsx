@@ -1,11 +1,11 @@
 import { BodyText, Button, TitleText } from 'components/common';
 import { Colors } from 'styles';
-import { Section, StyledMobile, ButtonContainer } from './styles';
+import { Section, StyledMobile, ButtonContainer, ContentWrapper } from './styles';
 
 const Main = () => {
   return (
     <Section id="main">
-      <div>
+      <ContentWrapper>
         <TitleText size="22px">Hi👋 I’m Sarah Park! And I am..</TitleText>
         <TitleText size="44px" margin="8px 0 0 0">
           App Frontend Developer🧑‍💻
@@ -28,7 +28,7 @@ const Main = () => {
             Contact
           </Button>
         </ButtonContainer>
-      </div>
+      </ContentWrapper>
       <StyledMobile />
     </Section>
   );
