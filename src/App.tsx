@@ -9,6 +9,7 @@ import Works from 'components/works';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
+import Experience from 'components/experience';
 
 const Div = styled.div`
   margin: 0;
@@ -25,6 +26,7 @@ function App() {
         <Main />
         <AboutMe />
         <Works />
+        <Experience />
       </Div>
     </>
   );
