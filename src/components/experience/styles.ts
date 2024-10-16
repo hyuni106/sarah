@@ -8,7 +8,7 @@ export const Section = styled.section`
   align-items: center;
   justify-content: center;
   background: ${Colors.white};
-  padding: 120px 40px 120px 40px;
+  padding: 120px 40px;
 `;
 
 export const ExperienceItemWrapper = styled.div`
