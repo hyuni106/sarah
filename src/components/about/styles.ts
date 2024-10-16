@@ -17,6 +17,11 @@ export const ProfileContainer = styled.div`
   align-items: flex-end;
   justify-content: center;
   margin-top: 80px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const ProfileInfoContainer = styled.div`
@@ -26,6 +31,13 @@ export const ProfileInfoContainer = styled.div`
   justify-content: center;
   margin-left: 40px;
   padding-bottom: 16px;
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+    margin-top: 24px;
+    margin-bottom: 0px;
+    align-items: center;
+  }
 `;
 
 const drawCircle = keyframes`
