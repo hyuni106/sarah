@@ -12,12 +12,19 @@ const Works = () => {
         MY WORKS 🧑‍💻
       </TitleText>
       <StyledSwiper
-        spaceBetween={100}
-        slidesPerView={1.3}
-        centeredSlides={true}
+        spaceBetween={10}
+        slidesPerView={1}
+        centeredSlides={false}
         modules={[Pagination]}
         pagination={{
           clickable: true
+        }}
+        breakpoints={{
+          768: {
+            slidesPerView: 1.3,
+            spaceBetween: 100,
+            centeredSlides: true
+          }
         }}
         onSlideChange={() => console.log('slide change')}
         onSwiper={swiper => console.log(swiper)}>

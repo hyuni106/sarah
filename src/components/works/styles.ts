@@ -9,7 +9,7 @@ export const Section = styled.section`
   align-items: center;
   justify-content: center;
   background: ${Colors.white};
-  padding: 120px 0 120px 0;
+  padding: 120px 0;
 `;
 
 export const StyledSwiper = styled(Swiper)`
@@ -30,6 +30,14 @@ export const StyledSwiper = styled(Swiper)`
   .swiper-pagination {
     z-index: 10;
   }
+
+  @media (max-width: 768px) {
+    height: 600px;
+
+    .swiper-pagination-bullet {
+      margin: -8px 8px !important;
+    }
+  }
 `;
 
 // ProjectCard
@@ -44,14 +52,27 @@ export const ProjectContainer = styled.div`
   justify-content: center;
   background: ${Colors.g7};
   padding: 0 32px;
+
+  @media (max-width: 768px) {
+    width: 95%;
+    border-radius: 0px;
+    flex-direction: column;
+    padding: 32px 16px;
+    height: 500px;
+  }
 `;
 
 export const ProjectImage = styled.img`
-  width: 250px;
-  height: 250px;
+  width: 230px;
+  height: 230px;
   object-fit: cover;
   background-color: ${Colors.blue3};
   border-radius: 30px;
+
+  @media (max-width: 768px) {
+    width: 180px;
+    height: 180px;
+  }
 `;
 
 export const ProjectInfo = styled.div`
@@ -62,6 +83,13 @@ export const ProjectInfo = styled.div`
   align-items: flex-start;
   justify-content: center;
   margin-left: 40px;
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+    margin-top: 24px;
+    align-items: center;
+    justify-content: flex-start;
+  }
 `;
 
 export const ProjectTitleContainer = styled.div`
