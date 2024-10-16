@@ -34,12 +34,36 @@ export const StyledSwiper = styled(Swiper)`
 
 // ProjectCard
 
-export const CardDiv = styled.div`
+export const ProjectContainer = styled.div`
   width: 100%;
   height: 460px;
   border-radius: 24px;
-  flex-direction: column;
+  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   background: ${Colors.g7};
+  padding: 0 32px;
+`;
+
+export const ProjectImage = styled.img`
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  background-color: ${Colors.blue3};
+  border-radius: 30px;
+`;
+
+export const ProjectInfo = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-left: 40px;
+`;
+
+export const ProjectTitleContainer = styled.div`
+  flex-direction: row;
 `;

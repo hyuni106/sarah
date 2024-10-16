@@ -12,7 +12,7 @@ const Works = () => {
         MY WORKS 🧑‍💻
       </TitleText>
       <StyledSwiper
-        spaceBetween={72}
+        spaceBetween={100}
         slidesPerView={1.3}
         centeredSlides={true}
         modules={[Pagination]}
@@ -21,18 +21,11 @@ const Works = () => {
         }}
         onSlideChange={() => console.log('slide change')}
         onSwiper={swiper => console.log(swiper)}>
-        <SwiperSlide>
-          <ProjectCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <ProjectCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <ProjectCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <ProjectCard />
-        </SwiperSlide>
+        {[...Array(4)].map((_, index) => (
+          <SwiperSlide key={index}>
+            <ProjectCard />
+          </SwiperSlide>
+        ))}
       </StyledSwiper>
     </Section>
   );
