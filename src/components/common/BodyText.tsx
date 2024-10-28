@@ -1,3 +1,4 @@
+import { Trans } from 'react-i18next';
 import styled from 'styled-components';
 import { Colors } from 'styles';
 
@@ -7,9 +8,11 @@ interface TextProps {
   color?: string;
   margin?: string;
   align?: string;
+  i18nKey?: string;
+  children?: React.ReactNode;
 }
 
-const BodyText = styled.p<TextProps>`
+const StyledText = styled.p<Omit<TextProps, 'i18nKey' | 'children'>>`
   font-family: SuiteRegular;
   font-size: ${props => props.size || '16px'};
   font-weight: ${props => props.weight || 'normal'};
@@ -22,5 +25,13 @@ const BodyText = styled.p<TextProps>`
     text-align: center;
   }
 `;
+
+const BodyText = ({ i18nKey, ...styleProps }: TextProps) => {
+  return (
+    <StyledText {...styleProps}>
+      {i18nKey ? <Trans i18nKey={i18nKey} components={{ br: <br /> }} /> : styleProps.children}
+    </StyledText>
+  );
+};
 
 export default BodyText;
