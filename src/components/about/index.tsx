@@ -1,9 +1,12 @@
 import { useState, useRef, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { BodyText, TitleText } from 'components/common';
 import { Section, ProfileContainer, ProfileInfoContainer, CircleSketchHighlight } from './styles';
 
 const AboutMe = () => {
+  const { t } = useTranslation();
+
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
 
@@ -32,7 +35,7 @@ const AboutMe = () => {
 
   return (
     <Section>
-      <TitleText size="32px">ABOUT ME 😁</TitleText>
+      <TitleText size="32px">{t('about_me')}</TitleText>
       <ProfileContainer>
         <div
           style={{
@@ -43,35 +46,31 @@ const AboutMe = () => {
           }}
         />
         <ProfileInfoContainer>
-          <BodyText size="20px">박수현</BodyText>
+          <BodyText size="20px">{t('about_name')}</BodyText>
           <BodyText size="20px" margin="8px 0 0 0">
-            93.10.06
+            {t('about_birth')}
           </BodyText>
           <BodyText size="20px" margin="8px 0 0 0">
-            suhyuni1006@gmail.com
+            {t('about_email')}
           </BodyText>
           <BodyText size="20px" margin="8px 0 0 0">
-            성결대학교 컴퓨터공학부 졸업
+            {t('about_edu')}
           </BodyText>
         </ProfileInfoContainer>
       </ProfileContainer>
 
       <BodyText size="18px" margin="80px 0 0 0" align="center">
-        아이디어가 현실이 되는 순간의 기쁨을 느끼며, 사용자에게 더 나은 경험을 제공하기 위해
-        끊임없이 고민하는 프론트엔드 개발자입니다.
+        {t('about_desc_1')}
         <br />
         <br />
         <CircleSketchHighlight ref={ref} $isVisible={isVisible}>
-          ‘Despite the forecast, live like it’s spring’
+          {t('about_desc_2')}
         </CircleSketchHighlight>{' '}
-        라는 릴리 퓰리처의 격언은 저의 다양한 경험과 업무에 임하는 자세를 잘 표현합니다.
-        <br />
-        코로나, 경영 악화 등 통제 불가능한 상황으로 인해 여러 회사를 이동할 수 밖에 없었지만, 이것을
-        발판삼아 언제나 회복력과 긍정적인 시각을 가지고 앞으로 나아갔습니다. 역경 속에서도 해결책을
-        찾고 도전을 멈추지 않았습니다.
-        <br /> 봄이 새로운 성장을 가져오듯, 저는 모든 기회를 성장의 발판으로 삼고 있습니다. 앞으로
-        다양한 동료와 경험을 통해 더 넓은 가능성을 펼칠 수 있는 프론트엔드 개발자로서, 지속적으로
-        발전하고 의미 있는 프로젝트에 기여하고자 합니다.
+        {t('about_desc_3')
+          .split('\n')
+          .map((line, idx) => (
+            <div key={idx}>{line}</div>
+          ))}
       </BodyText>
     </Section>
   );
