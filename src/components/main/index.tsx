@@ -1,14 +1,18 @@
+import { useTranslation } from 'react-i18next';
+
 import { BodyText, Button, TitleText } from 'components/common';
 import { Colors } from 'styles';
 import { Section, StyledMobile, ButtonContainer, ContentWrapper } from './styles';
 
 const Main = () => {
+  const { t } = useTranslation();
+
   return (
     <Section id="main">
       <ContentWrapper>
-        <TitleText size="22px">Hi👋 I’m Sarah Park! And I am..</TitleText>
+        <TitleText size="22px">{t('main_subtitle_1')}</TitleText>
         <TitleText size="44px" margin="8px 0 0 0">
-          App Frontend Developer🧑‍💻
+          {t('main_title_frontend')}
         </TitleText>
         <BodyText size="18px" margin="24px 0 0 0" color={Colors.g3}>
           안녕하세요! <b>React Native를 활용한 크로스 플랫폼 앱</b> 및 <br />
