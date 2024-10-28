@@ -1,14 +1,18 @@
+import { useTranslation } from 'react-i18next';
+
 import { BodyText, TitleText } from 'components/common';
 import { Section, SkillListWrapper } from './styles';
 import SkillItem from './SkillItem';
 
 const Skills = () => {
+  const { t } = useTranslation();
+
   return (
     <Section>
-      <TitleText size="32px">SKILLS</TitleText>
+      <TitleText size="32px">{t('skills_title')}</TitleText>
 
       <BodyText size="20px" margin="80px 0 0 0">
-        😆 Proficient (익숙해요)
+        {t('skills_pro')}
       </BodyText>
       <SkillListWrapper>
         {[...Array(1)].map((_, index) => (
@@ -17,7 +21,7 @@ const Skills = () => {
       </SkillListWrapper>
 
       <BodyText size="20px" margin="32px 0 0 0">
-        😃 Intermediate (어느정도 가능해요)
+        {t('skills_intermediate')}
       </BodyText>
       <SkillListWrapper>
         {[...Array(2)].map((_, index) => (
@@ -26,7 +30,7 @@ const Skills = () => {
       </SkillListWrapper>
 
       <BodyText size="20px" margin="32px 0 0 0">
-        🥹 Basic Experience (경험해본 적 있어요)
+        {t('skills_basic')}
       </BodyText>
       <SkillListWrapper>
         {[...Array(1)].map((_, index) => (
@@ -35,7 +39,7 @@ const Skills = () => {
       </SkillListWrapper>
 
       <BodyText size="20px" margin="32px 0 0 0">
-        🛠️ Collaboration Tools
+        {t('skills_tools')}
       </BodyText>
       <SkillListWrapper>
         {[...Array(3)].map((_, index) => (
