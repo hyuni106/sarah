@@ -1,4 +1,7 @@
 {
-  "main_subtitle_1": "Hi👋 I’m Sarah Park! And I am..",
-  "main_title_frontend": "App Frontend Developer🧑‍💻"
+  "main_subtitle_hi": "Hi👋 I’m Sarah Park! And I am..",
+  "main_title_frontend": "App Frontend Developer🧑‍💻",
+  "main_description": "안녕하세요! React Native를 활용한 크로스 플랫폼 앱과\n안드로이드 앱을 개발하는 5년 차 엔지니어 사라의 포트폴리오 사이트입니다!",
+  "learn": "알아보기",
+  "contact": "Contact"
 }
