@@ -1,15 +1,18 @@
 import { SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
+import { useTranslation } from 'react-i18next';
 
 import { Section, StyledSwiper } from './styles';
 import ProjectCard from './ProjectCard';
 import { TitleText } from 'components/common';
 
 const Works = () => {
+  const { t } = useTranslation();
+
   return (
     <Section>
       <TitleText size="32px" align="center">
-        MY WORKS 🧑‍💻
+        {t('works_title')}
       </TitleText>
       <StyledSwiper
         spaceBetween={10}
