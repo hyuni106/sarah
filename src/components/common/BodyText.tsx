@@ -29,7 +29,11 @@ const StyledText = styled.p<Omit<TextProps, 'i18nKey' | 'children'>>`
 const BodyText = ({ i18nKey, ...styleProps }: TextProps) => {
   return (
     <StyledText {...styleProps}>
-      {i18nKey ? <Trans i18nKey={i18nKey} components={{ br: <br /> }} /> : styleProps.children}
+      {i18nKey ? (
+        <Trans i18nKey={i18nKey} components={{ br: <br />, b: <b /> }} />
+      ) : (
+        styleProps.children
+      )}
     </StyledText>
   );
 };

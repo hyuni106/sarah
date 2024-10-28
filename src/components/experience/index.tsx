@@ -10,9 +10,7 @@ const Experience = () => {
   return (
     <Section>
       <TitleText size="32px">{t('experience_title')}</TitleText>
-      <BodyText size="18px" margin="80px 0" align="center">
-        {t('experience_desc')}
-      </BodyText>
+      <BodyText size="18px" margin="80px 0" align="center" i18nKey={'experience_desc'} />
 
       {TempList.map(item => (
         <ExperienceItem

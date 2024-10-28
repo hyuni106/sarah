@@ -14,13 +14,7 @@ const Main = () => {
         <TitleText size="44px" margin="8px 0 0 0">
           {t('main_title_frontend')}
         </TitleText>
-        <BodyText size="18px" margin="24px 0 0 0" color={Colors.g3}>
-          {t('main_description')
-            .split('\n')
-            .map((line, idx) => (
-              <div key={idx}>{line}</div>
-            ))}
-        </BodyText>
+        <BodyText size="18px" margin="24px 0 0 0" color={Colors.g3} i18nKey={'main_description'} />
 
         <ButtonContainer>
           <Button backgroundColor={Colors.g1} color={Colors.white} borderColor={Colors.transparent}>

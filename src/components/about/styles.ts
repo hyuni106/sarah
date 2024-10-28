@@ -57,6 +57,7 @@ interface CircleSketchHighlightProps {
 
 export const CircleSketchHighlight = styled.span<CircleSketchHighlightProps>`
   position: relative;
+  display: inline;
   z-index: 1;
 
   &:before,

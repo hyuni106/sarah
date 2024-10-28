@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 
 import { BodyText, TitleText } from 'components/common';
 import { Section, ProfileContainer, ProfileInfoContainer, CircleSketchHighlight } from './styles';
@@ -60,17 +60,13 @@ const AboutMe = () => {
       </ProfileContainer>
 
       <BodyText size="18px" margin="80px 0 0 0" align="center">
-        {t('about_desc_1')}
-        <br />
-        <br />
-        <CircleSketchHighlight ref={ref} $isVisible={isVisible}>
-          {t('about_desc_2')}
-        </CircleSketchHighlight>{' '}
-        {t('about_desc_3')
-          .split('\n')
-          .map((line, idx) => (
-            <div key={idx}>{line}</div>
-          ))}
+        <Trans
+          i18nKey="about_desc"
+          components={{
+            br: <br />,
+            highlight: <CircleSketchHighlight ref={ref} $isVisible={isVisible} as="span" />
+          }}
+        />
       </BodyText>
     </Section>
   );
