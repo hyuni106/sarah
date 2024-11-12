@@ -7,11 +7,9 @@
   // [parser] typescript를 parser로 사용하도록 함
   "parser": "@typescript-eslint/parser",
   // [plugins] 사용할 eslint 플러그인 설정
-  "plugins": ["@typescript-eslint", "prettier"],
+  "plugins": ["@typescript-eslint", "prettier", "unused-imports"],
   // [extends] 프로젝트에 적용할 eslit 규칙셋
   "extends": [
-    "plugin:import/errors",
-    "plugin:import/warnings",
     "plugin:prettier/recommended",
     "plugin:@typescript-eslint/recommended",
     "prettier",
@@ -21,7 +19,19 @@
   ],
   // [rules] 상세 규칙
   "rules": {
-    "react/react-in-jsx-scope": "off" // React 17 이상에서는 필요 없음
+    "prettier/prettier": ["error", { "endOfLine": "auto" }],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "unused-imports/no-unused-imports": "warn",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ]
   },
   "settings": {
     "react": {
