@@ -50,4 +50,12 @@ export const ExperienceContent = styled.div`
   flex-direction: column;
   margin-left: 60px;
   padding: 8px 0 16px 0;
+  min-width: 450px;
+`;
+
+export const CompanyInfoContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin-top: 10px;
 `;

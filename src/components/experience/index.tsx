@@ -1,45 +1,31 @@
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { BodyText, TitleText } from 'components/common';
 import { Section } from './styles';
 import ExperienceItem from './ExperienceItem';
+import experiencesData from 'data/experiences.json';
+import { Experience as ExperienceType } from 'models';
 
 const Experience = () => {
   const { t } = useTranslation();
+
+  const [experiences, setExperiences] = useState<ExperienceType[]>([]);
+
+  useEffect(() => {
+    setExperiences(experiencesData.experiences);
+  }, []);
 
   return (
     <Section>
       <TitleText size="32px">{t('experience_title')}</TitleText>
       <BodyText size="18px" margin="80px 0" align="center" i18nKey={'experience_desc'} />
 
-      {TempList.map(item => (
-        <ExperienceItem
-          key={item.date}
-          date={item.date}
-          position={item.position}
-          description={item.description}
-        />
+      {experiences.map((item, idx) => (
+        <ExperienceItem key={idx} experience={item} />
       ))}
     </Section>
   );
 };
 
 export default Experience;
-
-const TempList = [
-  {
-    date: '2022.01 - 2023.01',
-    position: 'Company / Frontend Developer',
-    description: 'Worked on developing web applications.'
-  },
-  {
-    date: '2022.01 - 2023.01',
-    position: 'Company / Frontend Developer',
-    description: 'Worked on developing web applications.'
-  },
-  {
-    date: '2022.01 - 2023.01',
-    position: 'Company / Frontend Developer',
-    description: 'Worked on developing web applications.'
-  }
-];
