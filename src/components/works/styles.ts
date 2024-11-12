@@ -66,7 +66,6 @@ export const ProjectImage = styled.img`
   width: 230px;
   height: 230px;
   object-fit: cover;
-  background-color: ${Colors.blue3};
   border-radius: 30px;
 
   @media (max-width: 768px) {
