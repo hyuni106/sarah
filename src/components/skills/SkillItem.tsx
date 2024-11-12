@@ -1,21 +1,26 @@
 import { BodyText } from 'components/common';
 import { SkillItemContainer, SkillImgContainer, SkillImg } from './styles';
+import { SkillDetail } from 'models';
 
-const SkillItem = () => {
+interface SkillItemProps {
+  skill: SkillDetail;
+}
+
+const SkillItem = (props: SkillItemProps) => {
+  const { skill } = props;
+
   return (
     <SkillItemContainer>
       <SkillImgContainer>
-        {[...Array(3)].map((_, index) => (
-          <SkillImg src={''} key={index} />
+        {skill.img_list.map((item, index) => (
+          <SkillImg src={item} key={index} />
         ))}
       </SkillImgContainer>
-      <BodyText size="16px" margin="20px 0 0 0">
-        DESCRIPTION
-        <br />
-        DESCRIPTION
-        <br />
-        DESCRIPTION
-      </BodyText>
+      {skill.description.map((item, index) => (
+        <BodyText key={index} size="16px" margin="8px 0 0 0">
+          {item}
+        </BodyText>
+      ))}
     </SkillItemContainer>
   );
 };

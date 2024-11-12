@@ -46,6 +46,7 @@ export const SkillImgContainer = styled.div`
   height: 40px;
   display: flex;
   gap: 12px;
+  margin-bottom: 20px;
 
   @media (max-width: 768px) {
     justify-content: center;
