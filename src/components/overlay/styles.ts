@@ -25,6 +25,7 @@ const fadeOut = keyframes`
 `;
 
 export const OverlayWrapper = styled.div<{ isVisible: boolean }>`
+  z-index: 10;
   position: fixed;
   flex-direction: row;
   top: 0;

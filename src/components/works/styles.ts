@@ -28,7 +28,7 @@ export const StyledSwiper = styled(Swiper)`
   }
 
   .swiper-pagination {
-    z-index: 10;
+    z-index: 2;
   }
 
   @media (max-width: 768px) {

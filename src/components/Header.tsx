@@ -16,7 +16,7 @@ const HeaderWrapper = styled.header`
   border-bottom: ${Colors.g5} 1px solid;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
   box-sizing: border-box;
-  z-index: 1000;
+  z-index: 2;
 `;
 
 const Nav = styled.nav`
