@@ -1,6 +1,17 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 import { Colors } from 'styles';
+
+const fadeInAnimation = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
 export const Section = styled.section`
   display: flex;
@@ -18,6 +29,10 @@ export const ExperienceItemWrapper = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 32px;
+
+  &.fade-in {
+    animation: ${fadeInAnimation} 1s ease forwards;
+  }
 `;
 
 export const Line = styled.div`

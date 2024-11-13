@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from 'react';
+
 import { Colors } from 'styles';
 import {
   ExperienceItemWrapper,
@@ -17,8 +19,30 @@ interface ExperienceProps {
 const ExperienceItem = (props: ExperienceProps) => {
   const { experience } = props;
 
+  const [isVisible, setIsVisible] = useState(false);
+  const itemRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setIsVisible(true);
+        observer.disconnect();
+      }
+    });
+
+    if (itemRef.current) {
+      observer.observe(itemRef.current);
+    }
+
+    return () => {
+      if (itemRef.current) {
+        observer.unobserve(itemRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <ExperienceItemWrapper>
+    <ExperienceItemWrapper ref={itemRef} className={isVisible ? 'fade-in' : ''}>
       <Line>
         <DashedLine>
           <line
