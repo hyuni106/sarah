@@ -1,7 +1,18 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 import { Colors } from 'styles';
 import { hexAlpha } from 'styles/Colors';
+
+const fadeInAnimation = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
 export const Section = styled.section`
   display: flex;
@@ -38,6 +49,10 @@ export const SkillItemContainer = styled.div`
 
   @media (min-width: 1350px) {
     flex-basis: calc(25% - 32px);
+  }
+
+  &.fade-in {
+    animation: ${fadeInAnimation} 1.5s ease forwards;
   }
 `;
 
