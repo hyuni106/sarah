@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
+import { Pagination, Mousewheel } from 'swiper/modules';
 import { useTranslation } from 'react-i18next';
 
 import { Section, StyledSwiper } from './styles';
@@ -27,7 +27,11 @@ const Works = () => {
         spaceBetween={10}
         slidesPerView={1}
         centeredSlides={false}
-        modules={[Pagination]}
+        modules={[Pagination, Mousewheel]}
+        mousewheel={{
+          enabled: true,
+          releaseOnEdges: true
+        }}
         pagination={{
           clickable: true
         }}
@@ -37,9 +41,7 @@ const Works = () => {
             spaceBetween: 100,
             centeredSlides: true
           }
-        }}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={swiper => console.log(swiper)}>
+        }}>
         {works.map((item, idx) => (
           <SwiperSlide key={idx}>
             <ProjectCard work={item} />

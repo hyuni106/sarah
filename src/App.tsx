@@ -11,6 +11,7 @@ import Skills from 'components/skills';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/mousewheel';
 
 const Div = styled.div`
   margin: 0;
