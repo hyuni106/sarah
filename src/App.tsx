@@ -2,6 +2,8 @@ import './App.css';
 import styled from 'styled-components';
 import GlobalStyle from 'utils/globalStyles';
 
+import Overlay from './components/overlay';
+
 import Header from './components/Header';
 import Main from 'components/main';
 import AboutMe from 'components/about';
@@ -31,6 +33,7 @@ function App() {
         <Skills />
         <Experience />
       </Div>
+      <Overlay />
     </>
   );
 }
