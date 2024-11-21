@@ -1,4 +1,5 @@
 import './App.css';
+import { useRef } from 'react';
 import styled from 'styled-components';
 import GlobalStyle from 'utils/globalStyles';
 
@@ -22,16 +23,45 @@ const Div = styled.div`
 `;
 
 function App() {
+  const mainRef = useRef<HTMLDivElement>(null);
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const worksRef = useRef<HTMLDivElement>(null);
+  const skillsRef = useRef<HTMLDivElement>(null);
+  const experiencesRef = useRef<HTMLDivElement>(null);
+
+  const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
       <GlobalStyle />
       <Div className="App">
-        <Header />
-        <Main />
-        <AboutMe />
-        <Works />
-        <Skills />
-        <Experience />
+        <Header
+          scrollToSection={scrollToSection}
+          mainRef={mainRef}
+          aboutRef={aboutRef}
+          worksRef={worksRef}
+          skillsRef={skillsRef}
+          experiencesRef={experiencesRef}
+        />
+        <div ref={mainRef}>
+          <Main />
+        </div>
+        <div ref={aboutRef}>
+          <AboutMe />
+        </div>
+        <div ref={worksRef}>
+          <Works />
+        </div>
+        <div ref={skillsRef}>
+          <Skills />
+        </div>
+        <div ref={experiencesRef}>
+          <Experience />
+        </div>
       </Div>
       <Overlay />
     </>

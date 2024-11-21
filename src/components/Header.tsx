@@ -25,13 +25,16 @@ const Nav = styled.nav`
   margin-left: auto;
 `;
 
-const NavItem = styled.a`
+const NavItem = styled.button`
   width: 84px;
   color: ${Colors.g1};
   padding: 4px 0;
   text-align: center;
   font-size: 16px;
   font-family: 'SuiteRegular';
+  background: none;
+  border: none;
+  cursor: pointer;
   text-decoration: underline;
   text-decoration-style: double;
   text-decoration-color: #fff;
@@ -43,14 +46,31 @@ const NavItem = styled.a`
   }
 `;
 
-const Header = () => {
+interface HeaderProps {
+  scrollToSection: (ref: React.RefObject<HTMLDivElement>) => void;
+  mainRef: React.RefObject<HTMLDivElement>;
+  aboutRef: React.RefObject<HTMLDivElement>;
+  worksRef: React.RefObject<HTMLDivElement>;
+  skillsRef: React.RefObject<HTMLDivElement>;
+  experiencesRef: React.RefObject<HTMLDivElement>;
+}
+
+const Header: React.FC<HeaderProps> = ({
+  scrollToSection,
+  mainRef,
+  aboutRef,
+  worksRef,
+  skillsRef,
+  experiencesRef
+}) => {
   return (
     <HeaderWrapper>
       <Nav>
-        <NavItem href="#main">MAIN</NavItem>
-        <NavItem href="#about">ABOUT</NavItem>
-        <NavItem href="#works">WORKS</NavItem>
-        <NavItem href="#contact">CONTACT</NavItem>
+        <NavItem onClick={() => scrollToSection(mainRef)}>MAIN</NavItem>
+        <NavItem onClick={() => scrollToSection(aboutRef)}>ABOUT</NavItem>
+        <NavItem onClick={() => scrollToSection(worksRef)}>WORKS</NavItem>
+        <NavItem onClick={() => scrollToSection(skillsRef)}>SKILLS</NavItem>
+        <NavItem onClick={() => scrollToSection(experiencesRef)}>EXPERIENCES</NavItem>
       </Nav>
     </HeaderWrapper>
   );
