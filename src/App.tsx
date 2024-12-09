@@ -3,6 +3,9 @@ import { useRef } from 'react';
 import styled from 'styled-components';
 import GlobalStyle from 'utils/globalStyles';
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import Overlay from './views/overlay';
 
 import Header from './components/header';
@@ -57,6 +60,7 @@ function App() {
         </div>
       </Div>
       <Overlay />
+      <ToastContainer />
     </>
   );
 }
