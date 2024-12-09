@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { OverlayWrapper, TypingText, Circle, CloseButton } from './styles';
 import useTypingEffect from './useTypingEffect';
 import { TitleText } from 'components/common';
@@ -9,7 +9,11 @@ const TIME_TO_FADE = 300;
 const TIME_INTERVAL = 3000;
 const TIME_PER_LETTER = 100;
 
-const TextTypingEffectWithOverlay = () => {
+const Overlay = () => {
+  const circleTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const textTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const overlayTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
   const [textIndex, setTextIndex] = useState(0);
   const [fadeText, setFadeText] = useState(true);
   const [fadeCircle, setFadeCircle] = useState(true);
@@ -24,11 +28,11 @@ const TextTypingEffectWithOverlay = () => {
   const timeToTypeText = texts[textIndex].length * TIME_PER_LETTER;
 
   useEffect(() => {
-    const circleTimeout = setTimeout(() => {
+    circleTimeoutRef.current = setTimeout(() => {
       setFadeCircle(false);
     }, timeToTypeText + 1000);
 
-    const textTimeout = setTimeout(() => {
+    textTimeoutRef.current = setTimeout(() => {
       setFadeText(false);
 
       setTimeout(() => {
@@ -39,21 +43,30 @@ const TextTypingEffectWithOverlay = () => {
     }, TIME_INTERVAL);
 
     return () => {
-      clearTimeout(circleTimeout);
-      clearTimeout(textTimeout);
+      clearTimeout(circleTimeoutRef.current!);
+      clearTimeout(textTimeoutRef.current!);
     };
   }, [textIndex, timeToTypeText]);
 
   useEffect(() => {
-    const overlayTimeout = setTimeout(
+    overlayTimeoutRef.current = setTimeout(
       () => setIsVisible(false),
       TIME_INTERVAL * texts.length + 500
     );
-    return () => clearTimeout(overlayTimeout);
+
+    return () => {
+      clearTimeout(overlayTimeoutRef.current!);
+      clearTimeout(circleTimeoutRef.current!);
+      clearTimeout(textTimeoutRef.current!);
+    };
   }, []);
 
   const onClose = () => {
     setIsVisible(false);
+
+    clearTimeout(overlayTimeoutRef.current!);
+    clearTimeout(circleTimeoutRef.current!);
+    clearTimeout(textTimeoutRef.current!);
   };
 
   return (
@@ -67,4 +80,4 @@ const TextTypingEffectWithOverlay = () => {
   );
 };
 
-export default TextTypingEffectWithOverlay;
+export default Overlay;
