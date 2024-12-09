@@ -3,9 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
 
 import { Icon, IconWrapper } from './styles';
-import { ReactComponent as IcTistory } from 'assets/svgs/ic_tistory.svg';
-import { ReactComponent as IcGithub } from 'assets/svgs/ic_github.svg';
-import { ReactComponent as IcGmail } from 'assets/svgs/ic_gmail.svg';
+import { IcGithub, IcGmail, IcTistory } from 'assets/svgs';
 
 type IconType = 'github' | 'gmail' | 'tistory';
 type SVGIconComponent = React.FC<React.SVGProps<SVGSVGElement>>;

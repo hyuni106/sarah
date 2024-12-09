@@ -30,6 +30,7 @@
     "eject": "react-scripts eject",
     "generate:svg": "node ./scripts/generate-svg-index.js"
   },
+  "type": "module",
   "eslintConfig": {
     "extends": [
       "react-app",

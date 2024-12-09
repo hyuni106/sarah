@@ -2,14 +2,7 @@ import { useTranslation } from 'react-i18next';
 
 import { BodyText, Button, TitleText } from 'components/common';
 import { Colors } from 'styles';
-import {
-  Section,
-  StyledMobile,
-  ButtonContainer,
-  ContentWrapper,
-  IconWrapper,
-  Icon
-} from './styles';
+import { Section, StyledMobile, ButtonContainer, ContentWrapper } from './styles';
 import { useMemo, useState } from 'react';
 import Contacts from './Contacts';
 

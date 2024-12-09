@@ -1,7 +1,7 @@
 import styled, { css, keyframes } from 'styled-components';
 
 import { Colors } from 'styles';
-import { ReactComponent as Mobile } from 'assets/svgs/img_mobile.svg';
+import { ImgMobile } from 'assets/svgs';
 
 const fadeIn = keyframes`
   from {
@@ -53,7 +53,7 @@ export const ContentWrapper = styled.div`
   }
 `;
 
-export const StyledMobile = styled(Mobile)`
+export const StyledMobile = styled(ImgMobile)`
   margin-left: 40px;
   width: 320px;
 
