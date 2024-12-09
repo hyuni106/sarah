@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 import { SwiperSlide } from 'swiper/react';
 import { Pagination, Mousewheel } from 'swiper/modules';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 
-import { Section, StyledSwiper } from './styles';
+import { LinkText, Section, StyledSwiper } from './styles';
 import ProjectCard from './ProjectCard';
-import { TitleText } from 'components/common';
+import { BodyText, TitleText } from 'components/common';
 import worksData from 'data/works.json';
 import { Work } from 'models';
+import DescText from './DescText';
 
 const Works = () => {
   const { t } = useTranslation();
@@ -20,9 +21,9 @@ const Works = () => {
 
   return (
     <Section>
-      <TitleText size="32px" align="center">
-        {t('works_title')}
-      </TitleText>
+      <TitleText size="32px" align="center" i18nKey={t('works_title')} />
+      <DescText />
+
       <StyledSwiper
         spaceBetween={10}
         slidesPerView={1}

@@ -12,6 +12,16 @@ export const Section = styled.section`
   padding: 120px 0;
 `;
 
+export const LinkText = styled.a`
+  color: ${Colors.g1};
+  text-decoration: underline;
+  cursor: pointer;
+
+  &:hover {
+    color: ${Colors.blue3};
+  }
+`;
+
 export const StyledSwiper = styled(Swiper)`
   height: 540px;
   margin-top: 80px;
