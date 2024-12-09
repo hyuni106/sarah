@@ -3,14 +3,14 @@ import { useRef } from 'react';
 import styled from 'styled-components';
 import GlobalStyle from 'utils/globalStyles';
 
-import Overlay from './components/overlay';
+import Overlay from './views/overlay';
 
-import Header from './components/Header';
-import Main from 'components/main';
-import AboutMe from 'components/about';
-import Works from 'components/works';
-import Experience from 'components/experience';
-import Skills from 'components/skills';
+import Header from './components/header';
+import Main from 'views/main';
+import AboutMe from 'views/about';
+import Works from 'views/works';
+import Experience from 'views/experience';
+import Skills from 'views/skills';
 
 import 'swiper/css';
 import 'swiper/css/pagination';

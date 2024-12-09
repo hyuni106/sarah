@@ -1,9 +1,8 @@
-import { useState } from 'react';
 import styled from 'styled-components';
 import { Colors } from 'styles';
 import { hexAlpha } from 'styles/Colors';
 
-const HeaderWrapper = styled.header`
+export const HeaderWrapper = styled.header`
   position: fixed;
   top: 0;
   left: 0;
@@ -23,7 +22,7 @@ const HeaderWrapper = styled.header`
   }
 `;
 
-const Nav = styled.nav<{ isOpen: boolean }>`
+export const Nav = styled.nav<{ isOpen: boolean }>`
   display: flex;
   gap: 48px;
   margin-left: auto;
@@ -44,7 +43,7 @@ const Nav = styled.nav<{ isOpen: boolean }>`
   }
 `;
 
-const NavItem = styled.button`
+export const NavItem = styled.button`
   width: 84px;
   color: ${Colors.g1};
   padding: 4px 0;
@@ -69,7 +68,7 @@ const NavItem = styled.button`
   }
 `;
 
-const HamburgerButton = styled.button`
+export const HamburgerButton = styled.button`
   display: none;
   background: none;
   border: none;
@@ -81,42 +80,3 @@ const HamburgerButton = styled.button`
     display: block;
   }
 `;
-
-interface HeaderProps {
-  scrollToSection: (ref: React.RefObject<HTMLDivElement>) => void;
-  mainRef: React.RefObject<HTMLDivElement>;
-  aboutRef: React.RefObject<HTMLDivElement>;
-  worksRef: React.RefObject<HTMLDivElement>;
-  skillsRef: React.RefObject<HTMLDivElement>;
-  experiencesRef: React.RefObject<HTMLDivElement>;
-}
-
-const Header: React.FC<HeaderProps> = ({
-  scrollToSection,
-  mainRef,
-  aboutRef,
-  worksRef,
-  skillsRef,
-  experiencesRef
-}) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(prev => !prev);
-  };
-
-  return (
-    <HeaderWrapper>
-      <HamburgerButton onClick={toggleMenu}>{isMenuOpen ? '✖' : '☰'}</HamburgerButton>
-      <Nav isOpen={isMenuOpen}>
-        <NavItem onClick={() => scrollToSection(mainRef)}>MAIN</NavItem>
-        <NavItem onClick={() => scrollToSection(aboutRef)}>ABOUT</NavItem>
-        <NavItem onClick={() => scrollToSection(worksRef)}>WORKS</NavItem>
-        <NavItem onClick={() => scrollToSection(skillsRef)}>SKILLS</NavItem>
-        <NavItem onClick={() => scrollToSection(experiencesRef)}>EXPERIENCES</NavItem>
-      </Nav>
-    </HeaderWrapper>
-  );
-};
-
-export default Header;
