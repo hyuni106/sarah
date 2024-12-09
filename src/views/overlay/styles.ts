@@ -65,3 +65,14 @@ export const Circle = styled.div<{ fadeCircle: boolean }>`
   transition: all 0.3s;
   opacity: ${({ fadeCircle }) => (fadeCircle ? 1 : 0)};
 `;
+
+export const CloseButton = styled.button`
+  position: absolute;
+  top: 5%;
+  left: 85%;
+  background: none;
+  border: none;
+  color: ${Colors.g1};
+  font-size: 32px;
+  cursor: pointer;
+`;

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { OverlayWrapper, TypingText, Circle } from './styles';
+import { OverlayWrapper, TypingText, Circle, CloseButton } from './styles';
 import useTypingEffect from './useTypingEffect';
 import { TitleText } from 'components/common';
 import { Colors } from 'styles';
@@ -52,8 +52,13 @@ const TextTypingEffectWithOverlay = () => {
     return () => clearTimeout(overlayTimeout);
   }, []);
 
+  const onClose = () => {
+    setIsVisible(false);
+  };
+
   return (
     <OverlayWrapper isVisible={isVisible}>
+      <CloseButton onClick={onClose}>{`✖`}</CloseButton>
       <TitleText size="60px" color={Colors.g1} margin="0 16px 60px 0">{`>`}</TitleText>
       <TypingText fadeText={fadeText} key={textIndex}>
         {textToShow} <Circle fadeCircle={fadeCircle} />
