@@ -1,0 +1,22 @@
+import camelCase from 'camelcase';
+import fs from 'fs';
+
+let contents = '// This file was created by the generate-svg-index script.\n';
+let exportObj = 'export {\n';
+
+const REGEX_SVG = /\.svg$/;
+
+const fileNames = fs.readdirSync('./src/assets/svgs/').sort();
+fileNames.forEach(fileName => {
+  if (REGEX_SVG.test(fileName)) {
+    const name = fileName.replace(REGEX_SVG, '');
+    const camelCasedName = camelCase(name, { pascalCase: true });
+    contents += `import { ReactComponent as ${camelCasedName}} from 'assets/svgs/${fileName}';\n`;
+    exportObj += `  ${camelCasedName},\n`;
+  }
+});
+
+exportObj += '};';
+contents += `\n${exportObj}\n`;
+
+fs.writeFileSync('./src/assets/svgs/index.ts', contents);
