@@ -1,5 +1,5 @@
+import { useState } from 'react';
 import styled from 'styled-components';
-
 import { Colors } from 'styles';
 import { hexAlpha } from 'styles/Colors';
 
@@ -17,12 +17,31 @@ const HeaderWrapper = styled.header`
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
   box-sizing: border-box;
   z-index: 2;
+
+  @media (max-width: 768px) {
+    padding: 16px;
+  }
 `;
 
-const Nav = styled.nav`
+const Nav = styled.nav<{ isOpen: boolean }>`
   display: flex;
   gap: 48px;
   margin-left: auto;
+
+  @media (max-width: 768px) {
+    display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    top: 60px;
+    right: 16px;
+    background: ${Colors.white};
+    border: 1px solid ${Colors.g5};
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    border-radius: 8px;
+    z-index: 10;
+  }
 `;
 
 const NavItem = styled.button`
@@ -44,6 +63,23 @@ const NavItem = styled.button`
     transform: scale(1);
     transition: all 1s;
   }
+
+  @media (max-width: 768px) {
+    width: auto;
+  }
+`;
+
+const HamburgerButton = styled.button`
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  margin-left: auto;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
 `;
 
 interface HeaderProps {
@@ -63,9 +99,16 @@ const Header: React.FC<HeaderProps> = ({
   skillsRef,
   experiencesRef
 }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(prev => !prev);
+  };
+
   return (
     <HeaderWrapper>
-      <Nav>
+      <HamburgerButton onClick={toggleMenu}>{isMenuOpen ? '✖' : '☰'}</HamburgerButton>
+      <Nav isOpen={isMenuOpen}>
         <NavItem onClick={() => scrollToSection(mainRef)}>MAIN</NavItem>
         <NavItem onClick={() => scrollToSection(aboutRef)}>ABOUT</NavItem>
         <NavItem onClick={() => scrollToSection(worksRef)}>WORKS</NavItem>
