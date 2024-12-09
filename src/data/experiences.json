@@ -1,0 +1,44 @@
+{
+  "experiences": [
+    {
+      "period": "2023.03 - 2024.06",
+      "company": "부엔까미노",
+      "position": "프론트엔드 개발자",
+      "description": "오픈뱅킹을 활용한 통장쪼개기 자동화 서비스 ‘세이블' 앱 개발"
+    },
+    {
+      "period": "2022.11 - 2023.02",
+      "company": "저스트점핀",
+      "position": "프론트엔드 개발자",
+      "description": "외부 업체와 협력을 통한 React Native 앱 개발 및 배포",
+      "additional_info": "경영 악화로 인한 권고사직"
+    },
+    {
+      "period": "2022.01 - 2022.11",
+      "company": "커넥트히어로",
+      "position": "안드로이드 앱 개발자",
+      "description": "택배기사와 택배 대행 일자리 매칭 서비스 ‘바통' 앱 개발",
+      "additional_info": "경영 악화로 인한 퇴사"
+    },
+    {
+      "period": "2020.09 - 2021.03",
+      "company": "엔티",
+      "position": "프론트엔드 개발자",
+      "description": "SI 애플리케이션 개발 프로젝트 기획 및 개발 경험",
+      "additional_info": "계약직"
+    },
+    {
+      "period": "2019.02 ~ 2019.07",
+      "company": "아뵤코리아",
+      "position": "안드로이드 앱 개발자",
+      "description": "택배기사와 택배 대행 일자리 매칭 서비스 ‘와사비(현 바통)' 앱 개발",
+      "additional_info": "현 커넥트히어로"
+    },
+    {
+      "period": "2018.01 ~ 2018.12",
+      "company": "아이디얼아이디어",
+      "position": "안드로이드 앱 개발자",
+      "description": "SI 애플리케이션 개발 프로젝트 기획 및 개발 경험"
+    }
+  ]
+}
