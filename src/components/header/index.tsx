@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { HeaderWrapper, HamburgerButton, Nav, NavItem } from './styles';
+import useScrollToSection from 'hooks/useScrollToSection';
 
 interface HeaderProps {
-  scrollToSection: (ref: React.RefObject<HTMLDivElement>) => void;
   mainRef: React.RefObject<HTMLDivElement>;
   aboutRef: React.RefObject<HTMLDivElement>;
   worksRef: React.RefObject<HTMLDivElement>;
@@ -11,13 +11,14 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({
-  scrollToSection,
   mainRef,
   aboutRef,
   worksRef,
   skillsRef,
   experiencesRef
 }) => {
+  const scrollToSection = useScrollToSection();
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {

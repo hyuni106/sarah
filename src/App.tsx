@@ -29,18 +29,11 @@ function App() {
   const skillsRef = useRef<HTMLDivElement>(null);
   const experiencesRef = useRef<HTMLDivElement>(null);
 
-  const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
-    if (ref.current) {
-      ref.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <>
       <GlobalStyle />
       <Div className="App">
         <Header
-          scrollToSection={scrollToSection}
           mainRef={mainRef}
           aboutRef={aboutRef}
           worksRef={worksRef}
