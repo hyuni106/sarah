@@ -2,7 +2,13 @@ import { useState, useRef, useEffect } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 
 import { BodyText, TitleText } from 'components/common';
-import { Section, ProfileContainer, ProfileInfoContainer, CircleSketchHighlight } from './styles';
+import {
+  Section,
+  ProfileContainer,
+  ProfileInfoContainer,
+  CircleSketchHighlight,
+  ProfileImage
+} from './styles';
 
 const AboutMe = () => {
   const { t } = useTranslation();
@@ -37,13 +43,10 @@ const AboutMe = () => {
     <Section>
       <TitleText size="32px">{t('about_me')}</TitleText>
       <ProfileContainer>
-        <div
-          style={{
-            width: '200px',
-            height: '280px',
-            backgroundColor: 'snow',
-            border: '1px solid black'
-          }}
+        <ProfileImage
+          src={
+            'https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fdebu5h%2FbtsLbXqrYXu%2F6YMMvt7lKgETw1THRuEamK%2Fimg.jpg'
+          }
         />
         <ProfileInfoContainer>
           <BodyText size="20px">{t('about_name')}</BodyText>

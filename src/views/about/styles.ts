@@ -24,6 +24,13 @@ export const ProfileContainer = styled.div`
   }
 `;
 
+export const ProfileImage = styled.img`
+  width: 220px;
+  height: 250px;
+  border-radius: 20px;
+  object-fit: cover;
+`;
+
 export const ProfileInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
