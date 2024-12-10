@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { Colors } from 'styles';
 import {
   ExperienceItemWrapper,
   Dot,
   ExperienceContent,
-  DashedLine,
-  Line,
-  CompanyInfoContainer
+  DashedLineWrapper,
+  LineConatainer,
+  CompanyInfoContainer,
+  StyledLine
 } from './styles';
 import { BodyText, TitleText } from 'components/common';
 import { Experience } from 'models';
@@ -43,22 +43,12 @@ const ExperienceItem = (props: ExperienceProps) => {
 
   return (
     <ExperienceItemWrapper ref={itemRef} className={isVisible ? 'fade-in' : ''}>
-      <Line>
-        <DashedLine>
-          <line
-            x1="2"
-            y1="0"
-            x2="2"
-            y2="100%"
-            stroke={Colors.g3}
-            strokeWidth="3"
-            strokeLinecap="round"
-            strokeDasharray="12"
-          />
-        </DashedLine>
-      </Line>
-
-      <Dot />
+      <LineConatainer>
+        <Dot />
+        <DashedLineWrapper>
+          <StyledLine x1="2" y1="0" x2="2" y2="100%" />
+        </DashedLineWrapper>
+      </LineConatainer>
 
       <ExperienceContent>
         <BodyText size="20px">{experience.period}</BodyText>

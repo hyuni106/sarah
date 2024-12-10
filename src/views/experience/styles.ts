@@ -33,9 +33,14 @@ export const ExperienceItemWrapper = styled.div`
   &.fade-in {
     animation: ${fadeInAnimation} 1s ease forwards;
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
-export const Line = styled.div`
+export const LineConatainer = styled.div`
   position: absolute;
   width: 4px;
   left: 0;
@@ -43,9 +48,16 @@ export const Line = styled.div`
   bottom: 0;
 `;
 
-export const DashedLine = styled.svg`
+export const DashedLineWrapper = styled.svg`
   width: 100%;
   height: 100%;
+`;
+
+export const StyledLine = styled.line`
+  stroke: ${Colors.g3};
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 12;
 `;
 
 export const Dot = styled.div`
@@ -65,7 +77,14 @@ export const ExperienceContent = styled.div`
   flex-direction: column;
   margin-left: 60px;
   padding: 8px 0 16px 0;
-  min-width: 450px;
+  width: 450px;
+  align-items: flex-start;
+
+  @media (max-width: 768px) {
+    align-items: center;
+    margin-left: 16px;
+    width: 300px;
+  }
 `;
 
 export const CompanyInfoContainer = styled.div`
@@ -73,4 +92,10 @@ export const CompanyInfoContainer = styled.div`
   flex-direction: row;
   align-items: flex-end;
   margin-top: 10px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
 `;
