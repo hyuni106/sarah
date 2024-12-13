@@ -1,5 +1,5 @@
-import camelCase from 'camelcase';
-import fs from 'fs';
+const fs = require('fs');
+const camelCase = require('camelcase');
 
 let contents = '// This file was created by the generate-svg-index script.\n';
 let exportObj = 'export {\n';

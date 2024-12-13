@@ -1,47 +1,34 @@
 {
-  // [env] 프로젝트 환경 설정, 브라우저 환경과 ES2021 문법 사용
-  "env": {
-    "browser": true,
-    "es2021": true
-  },
-  // [parser] typescript를 parser로 사용하도록 함
   "parser": "@typescript-eslint/parser",
-  // [plugins] 사용할 eslint 플러그인 설정
-  "plugins": ["@typescript-eslint", "prettier", "unused-imports"],
-  // [extends] 프로젝트에 적용할 eslit 규칙셋
-  "extends": [
-    "plugin:prettier/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier",
-    "plugin:prettier/recommended",
-    // typescript
-    "plugin:import/typescript"
-  ],
-  // [rules] 상세 규칙
+  "plugins": [],
+  "extends": ["react-app", "plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"],
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "project": "./tsconfig.json"
+  },
   "rules": {
-    "prettier/prettier": ["error", { "endOfLine": "auto" }],
-    "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": "warn",
-    "unused-imports/no-unused-imports": "warn",
-    "unused-imports/no-unused-vars": [
-      "warn",
-      {
-        "vars": "all",
-        "varsIgnorePattern": "^_",
-        "args": "after-used",
-        "argsIgnorePattern": "^_"
-      }
-    ]
+    "react/display-name": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "@typescript-eslint/no-shadow": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "react/react-in-jsx-scope": "off"
   },
   "settings": {
     "react": {
-      "version": "detect" // React 버전을 자동으로 감지
-    },
-    "import/resolver": {
-      "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
-      },
-      "typescript": { "project": "./tsconfig.json" } // this loads <rootdir>/tsconfig.json to eslint
+      "version": "detect"
     }
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "@typescript-eslint/no-empty-function": "off"
+      }
+    }
+  ]
 }
