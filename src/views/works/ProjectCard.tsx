@@ -20,8 +20,8 @@ const ProjectCard = (props: ProjectCardProps) => {
         <BodyText size="18px" margin="22px 0 22px 0">
           {work.description}
         </BodyText>
-        {work.details.map(item => (
-          <BodyText size="18px" margin="4px 0 0 0">
+        {work.details.map((item, idx) => (
+          <BodyText key={`pj_${idx}`} size="18px" margin="4px 0 0 0">
             {item}
           </BodyText>
         ))}

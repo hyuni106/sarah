@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import { SwiperSlide } from 'swiper/react';
 import { Pagination, Mousewheel } from 'swiper/modules';
-import { Trans, useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 
-import { LinkText, Section, StyledSwiper } from './styles';
+import { Section, StyledSwiper } from './styles';
 import ProjectCard from './ProjectCard';
-import { BodyText, TitleText } from 'components/common';
+import { TitleText } from 'components/common';
 import worksData from 'data/works.json';
 import { Work } from 'models';
 import DescText from './DescText';

@@ -16,7 +16,7 @@ const Header: React.FC<HeaderProps> = ({
   worksRef,
   skillsRef,
   experiencesRef
-}) => {
+}: HeaderProps) => {
   const scrollToSection = useScrollToSection();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);

@@ -24,28 +24,36 @@ const Skills = () => {
         {t('skills_pro')}
       </BodyText>
       <SkillListWrapper>
-        {skills?.proficient.map((item, idx) => <SkillItem key={idx} skill={item} />)}
+        {skills?.proficient.map((item, idx) => (
+          <SkillItem key={idx} skill={item} />
+        ))}
       </SkillListWrapper>
 
       <BodyText size="20px" margin="32px 0 0 0">
         {t('skills_intermediate')}
       </BodyText>
       <SkillListWrapper>
-        {skills?.intermediate.map((item, idx) => <SkillItem key={idx} skill={item} />)}
+        {skills?.intermediate.map((item, idx) => (
+          <SkillItem key={idx} skill={item} />
+        ))}
       </SkillListWrapper>
 
       <BodyText size="20px" margin="32px 0 0 0">
         {t('skills_basic')}
       </BodyText>
       <SkillListWrapper>
-        {skills?.basic.map((item, idx) => <SkillItem key={idx} skill={item} />)}
+        {skills?.basic.map((item, idx) => (
+          <SkillItem key={idx} skill={item} />
+        ))}
       </SkillListWrapper>
 
       <BodyText size="20px" margin="32px 0 0 0">
         {t('skills_tools')}
       </BodyText>
       <SkillListWrapper>
-        {skills?.tools.map((item, idx) => <SkillItem key={idx} skill={item} />)}
+        {skills?.tools.map((item, idx) => (
+          <SkillItem key={idx} skill={item} />
+        ))}
       </SkillListWrapper>
     </Section>
   );

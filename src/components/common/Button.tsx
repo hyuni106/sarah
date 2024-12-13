@@ -39,7 +39,7 @@ const Button: React.FC<ButtonProps> = ({
   borderColor,
   children,
   onClick
-}) => {
+}: ButtonProps) => {
   return (
     <StyledButton
       backgroundColor={backgroundColor}

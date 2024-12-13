@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { Colors } from 'styles';
 
 // 페이드 인/아웃 애니메이션
@@ -50,9 +50,7 @@ export const TypingText = styled.span<{ fadeText: boolean }>`
   font-size: 60px;
   color: ${Colors.g1};
   margin-bottom: 60px;
-  transition:
-    opacity 0.3s,
-    transform 0.3s;
+  transition: opacity 0.3s, transform 0.3s;
   opacity: ${({ fadeText }) => (fadeText ? 1 : 0)};
   transform: ${({ fadeText }) => (fadeText ? 'translateY(0)' : 'translateY(8px)')};
 `;
