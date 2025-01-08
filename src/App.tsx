@@ -2,6 +2,7 @@ import './App.css';
 import { useRef } from 'react';
 import styled from 'styled-components';
 import GlobalStyle from 'utils/globalStyles';
+import { Analytics } from '@vercel/analytics/react';
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -35,6 +36,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
+      <Analytics />
       <Div className="App">
         <Header
           mainRef={mainRef}
